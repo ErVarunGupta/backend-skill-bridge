@@ -1,0 +1,140 @@
+# Register User
+POST http://localhost:8080/api/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "name":"user2",
+  "username":"user2",
+  "email":"user2@gmail.com",
+  "password":"user2"
+}
+
+### Login User
+POST http://localhost:8080/api/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email":"varungupta0994@gmail.com",
+  "password":"varun"
+}
+
+### get User
+GET http://localhost:8080/api/user HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzFjZTQzODYwMjllMjBlYWJlYzRjMSIsImlhdCI6MTc1Nzg2MDIzMCwiZXhwIjoxNzU3OTQ2NjMwfQ.aXkV2kcTbUjWQZ3wSTFrvIO_s28_iuyP61B6Z3ESxVg
+
+
+### Create request
+POST http://localhost:8080/api/create_request HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzFkNTFiZjk0ZTVmOTZiZTQ2ZGU2YiIsImlhdCI6MTc1NzUzMzQ3OCwiZXhwIjoxNzU3NjE5ODc4fQ.B4es-7blbBXINBKp1wKlPjmR96ldb_C9OIMVWK3WSMI
+
+{
+  "title":"i want to need help in cse",
+  "description":"i need help related to os"
+}
+
+### Create request
+POST http://localhost:8080/api/create_request HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzE5N2YwMTlmMDEzYWM3ZTdjN2M0NCIsImlhdCI6MTc1NzUyOTgyMCwiZXhwIjoxNzU3NjE2MjIwfQ.v-wKFwDeW3_r7KHRqpeVVPz1oT_AoQCBMfY_yD_1vu4
+
+{
+  "title":"This is my second help request",
+  "description":"i need help related to java"
+}
+
+
+
+# Get all requests
+###
+GET http://localhost:8080/api/get_all_requests HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzgwN2IyODkxNzYxNjFkNzU3OTM2NSIsImlhdCI6MTc1Nzk0OTA4OSwiZXhwIjoxNzU4MDM1NDg5fQ.Qlqdsow-CGb6l9DxP3n_OsXEvVoWsvtPUOjWpb3dRkA
+
+
+
+# GEt all pending requests
+###
+GET http://localhost:8080/api/get_all_pending_request HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzE5N2YwMTlmMDEzYWM3ZTdjN2M0NCIsImlhdCI6MTc1NzUyNDYzOSwiZXhwIjoxNzU3NjExMDM5fQ.TZ0eR2r7dQ6TFrAPrJ6YgiOK7xow1cijn0DJ83dOOCI
+
+
+
+# Get my request
+###
+GET http://localhost:8080/api/get_my_requests HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzE5N2YwMTlmMDEzYWM3ZTdjN2M0NCIsImlhdCI6MTc1NzY4MDU2OCwiZXhwIjoxNzU3NzY2OTY4fQ.WNjcx_J9GXUFMfMQCiARrkNKhMCs22hvy-dtXtftMew
+
+
+
+# Accept request
+###
+PUT http://localhost:8080/api/accept_request/68c411a0862ece10bf3a365a HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzFjZTQzODYwMjllMjBlYWJlYzRjMSIsImlhdCI6MTc1NzY5ODYyMiwiZXhwIjoxNzU3Nzg1MDIyfQ.rwr51DXSUNwprMWU31NCVBO8Jd2H4LD7YjPL_f-2RqE
+
+{
+  "Date":"11-09-2025",
+  "Time":"01: 15 pm"
+}
+
+###my accepted requests
+GET http://localhost:8080/api/get_my_accepted_requests HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzE5N2YwMTlmMDEzYWM3ZTdjN2M0NCIsImlhdCI6MTc1NzY5ODUxMSwiZXhwIjoxNzU3Nzg0OTExfQ.B99YhN1e5e-e09rPbCH2uYOyw-vVmZveajtkAJXaTFk
+
+# Acknowledge Helper
+###
+PUT http://localhost:8080/api/acknoledge_helper/68c1d551f94e5f96be46de72 HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzFkNTFiZjk0ZTVmOTZiZTQ2ZGU2YiIsImlhdCI6MTc1NzUzMzQ3OCwiZXhwIjoxNzU3NjE5ODc4fQ.B4es-7blbBXINBKp1wKlPjmR96ldb_C9OIMVWK3WSMI
+
+{
+  "ackStatus":"accepted"
+}
+
+# Decline Request
+###
+PUT http://localhost:8080/api/decline_request/68c1c6928f31566307ae9d29 HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzE5NWRmMmUyOWQzNzAyZmQ0Nzg0OCIsImlhdCI6MTc1NzY2MzIxNSwiZXhwIjoxNzU3NzQ5NjE1fQ.hK93HsiTQ4V8EJo6b2-_BbsQV4oirxV48PASYzFWif8
+
+
+
+# Complete Request
+###
+PUT http://localhost:8080/api/complete_request/68c1d551f94e5f96be46de72 HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzE5NWRmMmUyOWQzNzAyZmQ0Nzg0OCIsImlhdCI6MTc1NzUyNDkyMCwiZXhwIjoxNzU3NjExMzIwfQ.QMxmYIpNrZySuhIJJ-qkiu9C7zUGYdAseFnA-AQ38Rk
+
+
+
+# Delete request
+###
+DELETE http://localhost:8080/api/delete_request/68c1b3dabe1536e5ee987067 HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzE5NWRmMmUyOWQzNzAyZmQ0Nzg0OCIsImlhdCI6MTc1NzUyNDkyMCwiZXhwIjoxNzU3NjExMzIwfQ.QMxmYIpNrZySuhIJJ-qkiu9C7zUGYdAseFnA-AQ38Rk
+
+
+
+###
+GET http://localhost:8080/api/all_user_profile HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzFjZTQzODYwMjllMjBlYWJlYzRjMSIsImlhdCI6MTc1Nzc5ODE4MywiZXhwIjoxNzU3ODg0NTgzfQ.JYXHNqgihrgYv6lrvjpbd-g4_wx6ZKz48Qq0D5nqH30
+
+
+###
+GET http://localhost:8080/api/my_profile HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzFjZTQzODYwMjllMjBlYWJlYzRjMSIsImlhdCI6MTc1Nzc5ODE4MywiZXhwIjoxNzU3ODg0NTgzfQ.JYXHNqgihrgYv6lrvjpbd-g4_wx6ZKz48Qq0D5nqH30
+
+
+
+###
+POST http://localhost:8080/api/upload_profile_picture HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzFjZTQzODYwMjllMjBlYWJlYzRjMSIsImlhdCI6MTc1Nzg2MDIzMCwiZXhwIjoxNzU3OTQ2NjMwfQ.aXkV2kcTbUjWQZ3wSTFrvIO_s28_iuyP61B6Z3ESxVg
+
