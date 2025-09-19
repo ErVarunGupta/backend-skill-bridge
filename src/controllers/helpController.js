@@ -175,21 +175,6 @@ export const getAcceptedOffers = async (req, res) => {
       });
     }
 
-    const user = await Profile.findOne({ userId });
-    if (!user) {
-      return res.status(404).json({
-        success: false,
-        message: "User not found!",
-      });
-    }
-    user.totalReviews = myOffers.length;
-    if (myOffers.length > 0) {
-      user.averageRating = user.totalRatings / myOffers.length;
-    } else {
-      user.averageRating = 0;
-    }
-    await user.save();
-
     return res.status(200).json({
       success: true,
       myOffers,
