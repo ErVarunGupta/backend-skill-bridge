@@ -11,6 +11,12 @@ const PORT = 8080;
 app.use(cors())
 app.use(express.json())
 
+app.get("/test", async(req, res)=>{
+    res.json({
+        message: "this is test route"
+    })
+})
+
 app.use("/api", authRoutes)
 app.use("/api", helpRoutes)
 app.use("/api", profileRoutes)
