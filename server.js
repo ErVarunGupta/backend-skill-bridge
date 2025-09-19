@@ -13,7 +13,7 @@ app.use(express.json())
 
 app.get("/test", async(req, res)=>{
     res.json({
-        message: "this is test route"
+        message: "Test route was successfull!"
     })
 })
 
