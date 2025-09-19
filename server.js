@@ -22,7 +22,7 @@ app.use("/api", helpRoutes)
 app.use("/api", profileRoutes)
 
 
-app.listen(PORT, ()=>{
+app.listen(PORT,"0.0.0.0", ()=>{
     console.log(`Server is listening on ${PORT}`)
     dbConnection();
 })
