@@ -47,6 +47,13 @@ export const deleteRequest = async (req, res) => {
       });
     }
 
+    if(request.status === 'completed'){
+      return res.status(400).json({
+        message: "This is completed request!",
+        success: false,
+      });
+    }
+
     await HelpRequest.deleteOne({ _id: requestId });
 
     return res.status(200).json({
