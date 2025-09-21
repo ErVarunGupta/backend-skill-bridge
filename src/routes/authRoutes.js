@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getUserProfile, Login, Register, updateUserProfile, uploadProfilePicture } from "../controllers/authController.js";
+import { getUserProfile, getUsersProfile, Login, Register, updateUserProfile, uploadProfilePicture } from "../controllers/authController.js";
 import { authValidation } from "../middlewares/authMiddleware.js";
 const router = Router();
 import multer, { diskStorage } from 'multer';
@@ -20,6 +20,7 @@ router.post("/upload_profile_picture", authValidation, upload.single("image"), u
 router.post("/register", Register)
 router.post("/login", Login)
 router.get("/user", authValidation, getUserProfile);
+router.get("/users", authValidation, getUsersProfile);
 router.put("/user_update", authValidation, updateUserProfile);
 
 

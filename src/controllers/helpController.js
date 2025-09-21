@@ -205,7 +205,7 @@ export const getUpcomingSession = async (req, res) => {
       .populate("helperId", "name username email profilePicture")
       .populate("userId", "name username email profilePicture");
 
-    console.log(sessions);
+    // console.log(sessions);
 
     if (sessions.length === 0) {
       return res.status(404).json({

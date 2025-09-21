@@ -96,8 +96,8 @@ export const Login = async(req, res)=>{
 export const getUserProfile = async(req, res)=>{
   try {
     const userId = req.user.id;
-    const user = await User.findById(userId);
-    if(!user){
+    const users = await Profile.findById(userId).populate("userId", "name username email profilePicture");
+    if(!users){
       return res.status(404).json({
         message: "User not found!",
         success: false
@@ -106,7 +106,28 @@ export const getUserProfile = async(req, res)=>{
 
     return res.status(200).json({
       success: true,
-      user
+      users
+    })
+  } catch (error) {
+    return res.status(500).json({
+      message: error.message,
+      success: false
+    })
+  }
+}
+export const getUsersProfile = async(req, res)=>{
+  try {
+    const users = await Profile.find().populate("userId", "name username email profilePicture");
+    if(!users){
+      return res.status(404).json({
+        message: "User not found!",
+        success: false
+      })
+    }
+
+    return res.status(200).json({
+      success: true,
+      users
     })
   } catch (error) {
     return res.status(500).json({
